@@ -36,6 +36,8 @@ impl Genome {
             rev_primer.reverse();
             println!("{:?} {:?} {:?} {:?}",primer, rev_primer, rev_comp_primer, loop_length);
 
+            
+
 
         }
     }
