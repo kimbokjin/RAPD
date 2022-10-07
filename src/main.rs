@@ -4,12 +4,13 @@ use rapd::Genome;
 use bio::io::fasta;
 
 fn main() {
-    let test_primer = vec![b"GGGATCCAAG".to_vec()];
-    let genomes = read_genome_file("genome.fna").unwrap();
+    let test_primer = vec![b"GGGAGGCAAA".to_vec()];
+    let genomes = read_genome_file("./sample/genome.fna").unwrap();
     println!("{:?}", genomes[0].desc);
 
     for genome in genomes.iter(){
-        let a = genome.match_primers(test_primer.clone(), 0, 0, 0, 0);
+        let _a = genome.match_primers(test_primer.clone(),3, 1, 7, 400, 3000);
+        break
     }
 
 }
@@ -35,4 +36,5 @@ fn read_genome_file(filename: &str)  -> Result<Vec<Genome>, &str>  {
         }
         false => Err("Genome file format must be '.fasta' or '.fna'. "),
     } 
+
 }
